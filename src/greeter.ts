@@ -57,3 +57,7 @@ function createSquare(config: SquareConfig): { color: string; area: number }{
 }
 let mySquare = createSquare({color: "black"});
 console.log(mySquare)
+
+let myFavoriteNumber;
+myFavoriteNumber = 'seven';
+myFavoriteNumber = 7;

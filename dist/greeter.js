@@ -32,7 +32,6 @@ for (var i = 0; i < 10; i++) {
     // 	(function(i){
     // 		setTimeout(function(){ console.log(i);}, 1000*i);
     // 	})(i);
-    setTimeout(function () { console.log(i); }, 1000 * i);
 }
 function createSquare(config) {
     var newSquare = { color: "white", area: 100 };
@@ -46,3 +45,6 @@ function createSquare(config) {
 }
 var mySquare = createSquare({ color: "black" });
 console.log(mySquare);
+var myFavoriteNumber;
+myFavoriteNumber = 'seven';
+myFavoriteNumber = 7;
