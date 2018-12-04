@@ -61,3 +61,4 @@ console.log(mySquare)
 let myFavoriteNumber;
 myFavoriteNumber = 'seven';
 myFavoriteNumber = 7;
+

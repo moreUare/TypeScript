@@ -111,4 +111,39 @@ let tom: Person = {
 //	Index signatures are incompatible
 //		Type 'string | number' is not assignable to type 'string'.
 //			Type 'number' is not assignable to type 'string'.
-上例中，任意属性的值是string，但是可选属性age的值却是number，number不是string的子属性，所以会报错
+上例中，任意属性的值是string，但是可选属性age的值却是number，number不是string的子属性，所以会报错。
+```
+
+### 只读属性
+```
+interface Person{
+	readonly id: number;
+	name: string;
+	age?: number;
+	[propName: string]: any;
+}
+let tom: Person = {
+	id: 89757,
+	name: 'Tom',
+	gender: 'male'
+}
+tom.id = 9257;
+//index.ts(14, 5):error TS2540: Cannot assign to 'id' because it is a constant or a read-only property.
+--------------------------------------------------
+注意，只读的约束存在于第一次给对象赋值的时候，而不是第一次给只读属性赋值的时候
+interface Person{
+	readyonly id: number;
+	name: string;
+	age?: number;
+	[propName: string]: any;
+}
+let tom: Person = {
+	name: 'Tom',
+	gender: 'male'
+}
+tom.id = 89757;
+//index.ts(8, 5): error TS2322: Type '{ name: string; gender: string}' is not assignable to type 'Person'
+```
+
+
+
